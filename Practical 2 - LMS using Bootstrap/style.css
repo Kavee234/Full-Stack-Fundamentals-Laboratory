@@ -1,0 +1,64 @@
+.hero-section {
+    background: linear-gradient(135deg, #eaf3ff, #f8fbff);
+}
+
+.feature-card,
+.course-card {
+    border: 0;
+    border-radius: 0.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card {
+    border-top: 3px solid var(--bs-primary);
+}
+
+.feature-card:hover,
+.course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.course-art {
+    height: 180px;
+    background: linear-gradient(135deg, #e8f1fb, #f1f4f8);
+}
+
+.contact-section {
+    background-color: #f8f9fa;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] .card,
+:root[data-theme="dark"] .modal-content {
+    color: #f8f9fa;
+    background-color: #212529;
+}
+
+:root[data-theme="dark"] .bg-light,
+:root[data-theme="dark"] .bg-secondary-subtle {
+    color: #f8f9fa !important;
+    background-color: #343a40 !important;
+}
+
+:root[data-theme="dark"] .hero-section,
+:root[data-theme="dark"] .contact-section {
+    color: #f8f9fa;
+    background: #343a40;
+}
+
+:root[data-theme="dark"] .course-art {
+    background: linear-gradient(135deg, #343a40, #495057);
+}
+
+:root[data-theme="dark"] .text-secondary {
+    color: #adb5bd !important;
+}
+
+:root[data-theme="dark"] .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
