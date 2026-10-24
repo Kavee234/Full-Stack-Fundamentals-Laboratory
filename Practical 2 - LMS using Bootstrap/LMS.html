@@ -4,173 +4,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LMS | University of Sri Jayewardenepura</title>
+    <title>LMS</title>
 
+    <script>
+        document.documentElement.classList.add("has-loader");
+        window.lmsLoaderFallback = window.setTimeout(() => {
+            document.documentElement.classList.remove("has-loader", "loader-exiting");
+        }, 4000);
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body class="min-vh-100">
 
+    <div class="loading-screen" id="loading-screen" aria-hidden="true">
+        <span class="loading-word loading-word-one">DISCOVER</span>
+        <span class="loading-word loading-word-two">CREATE</span>
+        <span class="loading-word loading-word-three">KNOWLEDGE</span>
+        <span class="loading-word loading-word-four">GROW</span>
+        <span class="loading-word loading-word-five">INSPIRE</span>
+        <span class="loading-word loading-word-six">YOUR NEXT CHAPTER</span>
+        <span class="loading-word loading-word-seven">LEARN TOGETHER</span>
+        <span class="loading-word loading-word-eight">IDEAS INTO ACTION</span>
+        <span class="loading-word loading-word-nine">EXPLORE</span>
+        <span class="loading-word loading-word-ten">ACHIEVE</span>
+        <span class="loading-word loading-word-eleven">IMAGINE</span>
+        <span class="loading-word loading-word-twelve">UNIVERSITY OF SRI JAYEWARDENEPURA</span>
+        <div class="loading-center">
+            <span class="loading-mark" aria-hidden="true">S</span>
+            <p class="loading-title">A brighter way to learn.</p>
+            <p class="loading-caption">Preparing your learning space</p>
+            <div class="loading-progress" aria-hidden="true"><span></span></div>
+        </div>
+    </div>
+    <p class="visually-hidden" role="status" aria-live="polite">Preparing your learning space.</p>
+
     <div class="container-fluid p-0 min-vh-100 d-flex flex-column">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-5 py-3">
+        <a class="skip-link" href="#main-content">Skip to content</a>
 
-            <a class="navbar-brand fs-4" href="#home">
-                Learning Management System<br>
-                <span class="fs-5">University of Sri Jayewardenepura</span>
-            </a>
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar">
+            <div class="container">
+                <a class="navbar-brand brand-lockup" href="#home"
+                    aria-label="University of Sri Jayewardenepura Learning Management System">
+                    <span class="brand-mark" aria-hidden="true">S</span>
+                    <span class="brand-copy">
+                        <span class="brand-title">Learning Management System</span>
+                        <span class="brand-subtitle">University of Sri Jayewardenepura</span>
+                    </span>
+                </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto fs-5">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#courses">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-                <button id="theme-toggle" class="btn btn-outline-light ms-lg-3 mt-3 mt-lg-0" type="button"
-                    aria-pressed="false">
-                    <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
-                    <span id="theme-toggle-label">Dark mode</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-            </div>
 
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#courses">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <button id="theme-toggle" class="btn theme-toggle ms-lg-3 mt-3 mt-lg-0" type="button"
+                        aria-pressed="false">
+                        <span id="theme-toggle-icon" aria-hidden="true">🌙</span>
+                        <span id="theme-toggle-label">Dark mode</span>
+                    </button>
+                </div>
+            </div>
         </nav>
 
-        <main class="flex-grow-1">
+        <main id="main-content" class="flex-grow-1">
 
-            <section id="home" class="hero-section text-center py-5 px-3">
-                <div class="container py-4">
-                    <h1 class="display-4 fw-bold">
-                        <span aria-hidden="true">🎓</span>
-                        <span id="greeting"></span> Welcome to our Online Learning Space!
-                    </h1>
+            <section id="home" class="hero-section">
+                <div class="container hero-inner">
+                    <div class="hero-copy">
+                        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAMPUS, YOUR CLASSROOM</p>
+                        <h1><span id="greeting"></span><br>Make learning <span class="highlight-text">your next
+                                step.</span></h1>
+                        <p class="hero-description">
+                            Explore your courses, discover new skills, and find everything you need to keep moving
+                            forward—all in one place.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#courses" class="btn btn-primary btn-lg">Explore courses <span
+                                    aria-hidden="true">→</span></a>
+                            <a href="#about" class="hero-secondary-link">Discover the platform <span
+                                    aria-hidden="true">↓</span></a>
+                        </div>
+                        <p class="hero-datetime">
+                            <span aria-hidden="true">◷</span>
+                            <time id="current-datetime" aria-label="Current date and time"></time>
+                        </p>
+                    </div>
 
-                    <p class="fs-4 mt-3">
-                        Explore your courses, access learning materials, complete activities,
-                        and track your progress—all in one place. We’re glad you’re here and wish
-                        you success in your learning journey.
-                    </p>
-
-                    <p class="fs-6 mt-4 mb-0">
-                        <span aria-hidden="true">🗓️</span>
-                        <time id="current-datetime" aria-label="Current date and time"></time>
-                    </p>
-
-                    <a href="#courses" class="btn btn-primary btn-lg mt-3">
-                        Explore Courses
-                    </a>
+                    <div class="hero-visual" aria-label="A visual overview of your learning journey">
+                        <div class="orbit orbit-one"></div>
+                        <div class="orbit orbit-two"></div>
+                        <div class="learning-panel">
+                            <div class="panel-topline">
+                                <span class="panel-label">LEARNING, IN FOCUS</span>
+                                <span class="panel-spark" aria-hidden="true">✳</span>
+                            </div>
+                            <p class="panel-heading">A space to<br>grow your ideas.</p>
+                            <div class="learning-path">
+                                <span class="path-icon path-icon-purple" aria-hidden="true">✳</span>
+                                <span><strong>Explore</strong><small>Find a topic that inspires you</small></span>
+                                <span class="path-number">01</span>
+                            </div>
+                            <div class="learning-path">
+                                <span class="path-icon path-icon-yellow" aria-hidden="true">↗</span>
+                                <span><strong>Learn</strong><small>Build knowledge at your pace</small></span>
+                                <span class="path-number">02</span>
+                            </div>
+                            <div class="learning-path">
+                                <span class="path-icon path-icon-green" aria-hidden="true">✦</span>
+                                <span><strong>Achieve</strong><small>Put new skills into practice</small></span>
+                                <span class="path-number">03</span>
+                            </div>
+                        </div>
+                        <span class="hero-decoration decoration-one" aria-hidden="true">✳</span>
+                        <span class="hero-decoration decoration-two" aria-hidden="true">✦</span>
+                    </div>
                 </div>
             </section>
 
-            <section id="about" class="container-fluid px-5 py-5">
-                <h2 class="text-center fw-bold mb-5"><span aria-hidden="true"></span> Our Features</h2>
+            <section id="about" class="features-section section-space">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">BUILT FOR YOUR JOURNEY</p>
+                        <h2>Everything you need to <span class="highlight-text">move forward.</span></h2>
+                        <p>Thoughtful tools and learning experiences to help you make the most of every lesson.</p>
+                    </div>
+                    <div class="row g-4">
 
-                <div class="row g-4">
-
-                    <div class="col-md-4">
-                        <div class="card feature-card h-100 shadow-sm">
-                            <div class="card-body text-center p-4">
-                                <h3 class="card-title"><span aria-hidden="true">📚</span> Extensive Course Library</h3>
-                                <p class="card-text fs-5">
-                                    Access courses in a variety of fields and skill levels.
-                                </p>
+                        <div class="col-md-4">
+                            <div class="card feature-card h-100 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <span class="feature-icon icon-blue" aria-hidden="true">▤</span>
+                                    <h3 class="card-title">A world of courses</h3>
+                                    <p class="card-text">Explore subjects and skills across a growing range of learning
+                                        paths.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="card feature-card h-100 shadow-sm">
-                            <div class="card-body text-center p-4">
-                                <h3 class="card-title"><span aria-hidden="true">💬</span> Interactive Discussions</h3>
-                                <p class="card-text fs-5">
-                                    Engage in live discussions and group projects.
-                                </p>
+                        <div class="col-md-4">
+                            <div class="card feature-card h-100 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <span class="feature-icon icon-peach" aria-hidden="true">↗</span>
+                                    <h3 class="card-title">Learn together</h3>
+                                    <p class="card-text">Share ideas, take part in discussions, and learn from your
+                                        community.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="card feature-card h-100 shadow-sm">
-                            <div class="card-body text-center p-4">
-                                <h3 class="card-title"><span aria-hidden="true">🏆</span> Certification</h3>
-                                <p class="card-text fs-5">
-                                    Earn certificates to showcase your achievements.
-                                </p>
+                        <div class="col-md-4">
+                            <div class="card feature-card h-100 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <span class="feature-icon icon-lime" aria-hidden="true">✦</span>
+                                    <h3 class="card-title">Celebrate progress</h3>
+                                    <p class="card-text">Keep building your skills and make every new achievement count.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </section>
 
-            <section id="courses" class="container-fluid px-5 py-5 bg-light">
-                <h2 class="text-center fw-bold mb-5"><span aria-hidden="true"></span> Popular Courses</h2>
+            <section id="courses" class="courses-section section-space">
+                <div class="container">
+                    <div class="section-heading courses-heading">
+                        <div>
+                            <p class="eyebrow">FIND YOUR STARTING POINT</p>
+                            <h2>Popular courses</h2>
+                            <p>Take a first look at subjects you can explore.</p>
+                        </div>
+                        <span class="course-count"><span aria-hidden="true">✳</span> CURATED FOR YOU</span>
+                    </div>
+                    <div class="row g-4">
 
-                <div class="row g-4">
-
-                    <div class="col-md-4">
-                        <div class="card course-card h-100 shadow-sm">
-                            <div class="course-art d-flex align-items-center justify-content-center">
-                                <span class="fs-5 text-secondary"><span aria-hidden="true">💻</span> WEB
-                                    DEVELOPMENT</span>
-                            </div>
-                            <div class="card-body p-4">
-                                <h3 class="card-title"><span aria-hidden="true">💻</span> Web Development</h3>
-                                <p class="card-text fs-5">
-                                    Learn to build modern, responsive websites using HTML, CSS, and JavaScript.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#webDevelopmentModal">Learn More</button>
+                        <div class="col-md-4">
+                            <div class="card course-card h-100 shadow-sm">
+                                <div class="course-art course-art-web" aria-hidden="true">
+                                    <span class="art-label">CREATIVE TECHNOLOGY</span>
+                                    <span class="art-symbol">&lt;/&gt;</span>
+                                    <span class="art-decoration art-decoration-web">✳</span>
+                                </div>
+                                <div class="card-body p-4">
+                                    <span class="course-category">DESIGN &amp; BUILD</span>
+                                    <h3 class="card-title">Web Development</h3>
+                                    <p class="card-text">Learn to build modern, responsive websites using HTML, CSS, and
+                                        JavaScript.</p>
+                                    <button type="button" class="btn course-link" data-bs-toggle="modal"
+                                        data-bs-target="#webDevelopmentModal"
+                                        aria-label="Learn more about Web Development">Explore course <span
+                                            aria-hidden="true">→</span></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="card course-card h-100 shadow-sm">
-                            <div class="course-art d-flex align-items-center justify-content-center">
-                                <span class="fs-5 text-secondary"><span aria-hidden="true">📊</span> DATA SCIENCE</span>
-                            </div>
-                            <div class="card-body p-4">
-                                <h3 class="card-title"><span aria-hidden="true">📊</span> Data Science</h3>
-                                <p class="card-text fs-5">
-                                    Master data analysis, visualization, and machine learning techniques.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#dataScienceModal">Learn More</button>
+                        <div class="col-md-4">
+                            <div class="card course-card h-100 shadow-sm">
+                                <div class="course-art course-art-data" aria-hidden="true">
+                                    <span class="art-label">INSIGHT &amp; DISCOVERY</span>
+                                    <span class="art-symbol art-symbol-data">◒</span>
+                                    <span class="art-decoration art-decoration-data">⌁</span>
+                                </div>
+                                <div class="card-body p-4">
+                                    <span class="course-category">DATA &amp; ANALYTICS</span>
+                                    <h3 class="card-title">Data Science</h3>
+                                    <p class="card-text">Master data analysis, visualization, and machine learning
+                                        techniques.</p>
+                                    <button type="button" class="btn course-link" data-bs-toggle="modal"
+                                        data-bs-target="#dataScienceModal"
+                                        aria-label="Learn more about Data Science">Explore course <span
+                                            aria-hidden="true">→</span></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="card course-card h-100 shadow-sm">
-                            <div class="course-art d-flex align-items-center justify-content-center">
-                                <span class="fs-5 text-secondary"><span aria-hidden="true">📣</span> DIGITAL
-                                    MARKETING</span>
-                            </div>
-                            <div class="card-body p-4">
-                                <h3 class="card-title"><span aria-hidden="true">📣</span> Digital Marketing</h3>
-                                <p class="card-text fs-5">
-                                    Understand SEO, social media marketing, and online branding strategies.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#digitalMarketingModal">Learn More</button>
+                        <div class="col-md-4">
+                            <div class="card course-card h-100 shadow-sm">
+                                <div class="course-art course-art-marketing" aria-hidden="true">
+                                    <span class="art-label">STORIES THAT CONNECT</span>
+                                    <span class="art-symbol art-symbol-marketing">↗</span>
+                                    <span class="art-decoration art-decoration-marketing">✳</span>
+                                </div>
+                                <div class="card-body p-4">
+                                    <span class="course-category">BRAND &amp; GROWTH</span>
+                                    <h3 class="card-title">Digital Marketing</h3>
+                                    <p class="card-text">Understand SEO, social media marketing, and online branding
+                                        strategies.</p>
+                                    <button type="button" class="btn course-link" data-bs-toggle="modal"
+                                        data-bs-target="#digitalMarketingModal"
+                                        aria-label="Learn more about Digital Marketing">Explore course <span
+                                            aria-hidden="true">→</span></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </section>
 
@@ -249,27 +336,75 @@
                 </div>
             </div>
 
-            <section id="contact" class="contact-section text-center py-5 px-3">
-                <h2 class="fw-bold"><span aria-hidden="true">✉️</span> Contact Us</h2>
-                <p class="fs-5 mt-3">
-                    University of Sri Jayewardenepura
-                </p>
-                <p class="fs-5">
-                    Get in touch for more information about our courses.
-                </p>
-                <a href="mailto:info@sjp.ac.lk" class="btn btn-primary btn-lg">
-                    Contact Us
-                </a>
+            <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title fs-4" id="privacyModalLabel">Privacy information</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>This learning page is a demonstration and does not collect or send personal information.
+                                Your light or dark mode choice is saved in this browser only.</p>
+                            <p class="mb-0">For the University of Sri Jayewardenepura’s official information, visit its
+                                website or contact the university directly.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary" href="https://www.sjp.ac.lk/contact-us/" target="_blank"
+                                rel="noopener noreferrer">Official USJ contact <span aria-hidden="true">↗</span></a>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title fs-4" id="termsModalLabel">Terms of service</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>This page is an educational demonstration, not an official University of Sri
+                                Jayewardenepura learning service. Course descriptions are illustrative and do not
+                                provide enrollment or course access.</p>
+                            <p class="mb-0">For official university services and information, use the University of Sri
+                                Jayewardenepura website.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary" href="https://www.sjp.ac.lk/" target="_blank"
+                                rel="noopener noreferrer">Official USJ website <span aria-hidden="true">↗</span></a>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section id="contact" class="contact-section">
+                <div class="container contact-inner">
+                    <div>
+                        <p class="eyebrow">HERE TO HELP</p>
+                        <h2>Have a question?<br><span>We’d love to hear from you.</span></h2>
+                        <p>Get in touch with the University of Sri Jayewardenepura for more information about learning
+                            with us.</p>
+                    </div>
+                    <a href="mailto:info@sjp.ac.lk" class="btn btn-light btn-lg">Contact the university <span
+                            aria-hidden="true">→</span></a>
+                </div>
             </section>
 
         </main>
 
-        <footer class="bg-primary text-white text-center py-4 mt-auto">
-            <p class="mb-2">
-                © 2026 LMS Platform. All Rights Reserved.
-            </p>
-            <a href="#privacy" class="me-3">Privacy Policy</a>
-            <a href="#terms">Terms of Service</a>
+        <footer class="site-footer mt-auto">
+            <div class="container footer-inner">
+                <p class="mb-0">© 2026 University of Sri Jayewardenepura LMS</p>
+                <div class="footer-links">
+                    <a href="#privacyModal" data-bs-toggle="modal" role="button">Privacy Policy</a>
+                    <a href="#termsModal" data-bs-toggle="modal" role="button">Terms of Service</a>
+                </div>
+            </div>
         </footer>
 
     </div>

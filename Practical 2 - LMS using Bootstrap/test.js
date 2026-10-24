@@ -1,3 +1,16 @@
+const loadingScreen = document.getElementById("loading-screen");
+const loadingDuration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 500 : 1800;
+
+window.setTimeout(() => {
+    document.documentElement.classList.add("loader-exiting");
+    window.clearTimeout(window.lmsLoaderFallback);
+
+    window.setTimeout(() => {
+        document.documentElement.classList.remove("has-loader", "loader-exiting");
+        loadingScreen.remove();
+    }, 450);
+}, loadingDuration);
+
 const currentHour = new Date().getHours();
 let greeting;
 
